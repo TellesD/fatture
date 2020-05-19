@@ -1,0 +1,64 @@
+<ion-header >
+
+   <ion-buttons >
+    <ion-back-button class="backBt"  color="warning"></ion-back-button>
+  </ion-buttons>
+</ion-header>
+
+<ion-content>
+  <ion-grid class="grid-sign-up">
+
+    
+        <h2 class="name">Cadastro</h2>
+    
+
+    <ion-row>
+      <ion-col>
+        <form [formGroup]="list" class="form-sign-up" (ngSubmit)="cadastrar()">
+
+
+          <ion-item class="item-sign-up" lines="none">
+            <ion-input type="text" placeholder="CPF/CNPJ" formControlName="doc"  [brmasker]="{person: true}" maxlength="100"></ion-input>
+          </ion-item>
+
+
+          <ion-item class="item-sign-up" lines="none">
+            <ion-input type="text" placeholder="Nome" formControlName="fantasy_name" maxlength="100"></ion-input>
+          </ion-item>
+
+          <ion-item class="item-sign-up" lines="none">
+            <ion-input type="text" placeholder="Data de Nascimento" formControlName="birthday" [brmasker]="{mask: '01/03/1999', type:'num'}" maxlength="100">
+            </ion-input>
+          </ion-item>
+
+          <ion-item class="item-sign-up" lines="none">
+            <ion-input type="email" placeholder="E-mail" formControlName="email"></ion-input>
+          </ion-item>
+
+          <ion-item class="item-sign-up" lines="none">
+            <ion-input type="password" placeholder="Senha" formControlName="password"></ion-input>
+          </ion-item>
+          <ion-item class="item-sign-up" lines="none">
+            <ion-input type="password" placeholder="Confimar Senha" formControlName="password"></ion-input>
+          </ion-item>
+          <ion-item class="item-sign-up" lines="none">
+            <ion-input type="text" placeholder="CEP" formControlName="cep" [brmasker]="{mask: '48970-000', type:'num'}" maxlength="100"></ion-input>
+          </ion-item>
+          <ion-item class="item-sign-up" lines="none">
+            <ion-input type="text" placeholder="Endereço" formControlName="neighborhood" maxlength="100"></ion-input>
+          </ion-item>
+          <ion-item class="item-sign-up" lines="none">
+            <ion-input type="text" placeholder="Cidade" formControlName="city" maxlength="100"></ion-input>
+          </ion-item>
+
+          <ion-item class="item-sign-up" lines="none">
+            <ion-input (keyup.enter)="cadastrar()" type="text" placeholder="Celular" [brmasker]="{phone: true}"
+              formControlName="cellphone"></ion-input>
+          </ion-item>
+          <ion-button color="warning" class="button-sign-up" type="submit" [disabled]="list.invalid" style="text-transform: none;">
+            Cadastrar</ion-button>
+        </form>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

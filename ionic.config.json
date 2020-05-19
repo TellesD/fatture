@@ -1,0 +1,7 @@
+{
+  "name": "Fatture_place",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

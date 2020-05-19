@@ -1,0 +1,39 @@
+<ion-content>
+<ion-grid class="grid-login">
+  <ion-row>
+    <ion-col align="center">
+      <h4>Identifique-se</h4>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col>
+      <form [formGroup]="list" class="form-login" (ngSubmit)="login()">
+        <h3 class="name">Login</h3>
+        <ion-item class="item-login" lines="none">
+          <ion-input type="text" placeholder="E-mail" formControlName="email"></ion-input>
+        </ion-item>
+        <h3 class="name">Senha</h3>
+        <ion-item class="item-login" lines="none">
+          <ion-input (keyup.enter)="login()" type="password" placeholder="Senha" formControlName="password"></ion-input>
+        </ion-item>
+        <ion-button color="warning" type="submit" style="text-transform: none;" class="button-login" [disabled]="list.invalid">
+          Acessar</ion-button>
+      </form>
+    </ion-col>
+
+  </ion-row>
+
+  <ion-row>
+    <ion-col>
+      <span class="span-link" style="margin-left:10px;float: right; margin-bottom: -5px; " align="right" [routerLink]="['/sign-up']">Esqueci minha
+        senha</span>
+    </ion-col>
+  </ion-row>
+
+
+</ion-grid>
+</ion-content>
+<ion-footer class="span-footer" align="center">
+Não tem uma conta?
+<span class="span-link" [routerLink]="['/sign-up']">Cadastre-se</span>
+</ion-footer>
