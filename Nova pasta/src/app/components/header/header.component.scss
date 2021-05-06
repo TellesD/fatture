@@ -1,0 +1,32 @@
+.notification {
+  margin-right: -15px;
+  margin-top: -10px;
+  border-radius: 15px;
+  height: 15px;
+}
+
+.button-coroa {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.full {
+  width: 100%;
+}
+
+.title-header {
+  color: white;
+  font-size: 20px;
+  text-align: center;
+}
+
+.image-coroa {
+  width: 55px;
+  margin-top: 1px;
+  position: absolute;
+  height: 35px;
+}
+.novacor{
+  --background: #f6891f;
+}

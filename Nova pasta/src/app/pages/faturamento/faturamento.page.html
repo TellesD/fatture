@@ -1,0 +1,48 @@
+<app-header></app-header>
+
+<ion-content>
+  
+  <ion-grid class="grid-login">
+    <ion-row>
+      <ion-col>
+        <h1 class="nameh">Cadastrar serviço</h1>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+         
+          <h3 class="name">Profissional</h3>
+          <form [formGroup]="formPay" (ngSubmit)="getPay()">
+            <ion-item class="item-login" lines="none">
+              <ion-select slot="end">
+                <ion-select-option> Estabelecimento</ion-select-option>
+              </ion-select>
+            </ion-item>
+        
+          <h5 class="name">Data inicial</h5>
+          <ion-item lines="none">
+          <ion-datetime formControlName="dataStart" displayFormat="MM/DD/YYYY" class="date"></ion-datetime>
+          </ion-item>
+          <h5 class="name">Data final</h5>
+          <ion-item lines="none">
+          <ion-datetime formControlName="dataEnd" displayFormat="MM/DD/YYYY" class="date"></ion-datetime>
+          </ion-item>
+
+        
+         
+          <ion-button class="button-login" type="submit" [disabled]="!formPay.valid">Confirmar</ion-button>
+        </form>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+      
+          <p *ngFor="let item of services"  class="name"> {{item.service}}  -  R${{item.price}} </p>
+       <hr class="line-separator" />
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+
+</ion-content>
+

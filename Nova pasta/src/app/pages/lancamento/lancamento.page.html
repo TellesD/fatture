@@ -1,0 +1,50 @@
+<app-header></app-header>
+
+<ion-content>
+  <ion-grid class="grid-login">
+    <form [formGroup]="formService" (ngSubmit)="setPayment()">
+      <ion-row>
+        <ion-col>
+          <h1 class="nameh">Lançamento</h1>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <h3 class="name">Profissional</h3>
+          <ion-item class="item-login" lines="none">
+            <ion-select slot="end" (ionChange)="getGrupo()" style="max-width: none;">
+              <ion-select-option value="0">Estabelecimento</ion-select-option>
+
+            </ion-select>
+          </ion-item>
+
+          <h3 class="name">Grupo de serviço</h3>
+          <ion-item class="item-login" lines="none">
+            <ion-select formControlName="service_group" (ionChange)="getService($event.target.value)" slot="end" style="max-width: none;">
+              <ion-select-option *ngFor="let item of grupos" value={{item.id}}> {{item.name}}</ion-select-option>
+            </ion-select>
+          </ion-item>
+          <h3 class="name">Serviço</h3>
+          <ion-item class="item-login" lines="none">
+            <ion-select formControlName="service" slot="end" style="max-width: none;">
+              <ion-select-option  *ngFor="let item of services" value={{item.name}}> {{item.name}}</ion-select-option>
+            </ion-select>
+          </ion-item>
+
+          <h3 class="name">Cliente</h3>
+          <ion-item class="item-login" lines="none">
+            <ion-input formControlName="client" type="text"></ion-input>
+          </ion-item>
+          <h3 class="name">Valor</h3>
+          <ion-item class="item-login" lines="none">
+            <ion-input formControlName="price" type="number"></ion-input>
+          </ion-item>
+          <ion-button class="button-login" type="submit" [disabled]="!formService.valid">Confirmar</ion-button>
+        </ion-col>
+
+      </ion-row>
+    </form>
+  </ion-grid>
+
+
+</ion-content>

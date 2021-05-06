@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar class="novacor" style="height: 50px;">
+    
+    <ion-buttons slot="start" [ngClass]="(isUserLogged) ? 'button-coroa': 'button-coroa full'">
+    
+      <ion-menu-button [hidden]="!isUserLogged"></ion-menu-button>
+      <img [hidden]="isUserLogged"
+        src="/assets/coroa_menu.png"
+        [ngClass]="{ 'image-coroa': !isUserLogged }"
+      />
+      <p class="title-header">{{title}}</p>
+    </ion-buttons>
+    <ion-buttons slot="end" [hidden]="!isUserLogged">
+      <div [hidden]="!notification">
+        <ion-badge color="danger" class="notification">
+          <span id="badgeNotification">{{ notification }}</span>
+        </ion-badge>
+      </div>
+
+      <ion-icon
+        (click)="open('/notifications')"
+        name="notifications-outline"
+        slot="end"
+        class="icon"
+      >
+      </ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
+  
+</ion-header>

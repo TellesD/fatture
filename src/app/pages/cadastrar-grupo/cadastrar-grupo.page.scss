@@ -1,0 +1,27 @@
+.item-login {
+  width: 85%;
+  border: 2px solid #f6891f;
+  border-radius: 0px;
+  margin-bottom: 10px;
+  margin-left: 7%;
+}
+.name{
+  color: grey;
+  margin-left: 7%;
+}
+.nameh{
+  color: #f6891f;
+  margin-left: 7%;
+}
+.button-login {
+  --box-shadow: none;
+  --border: none;
+  --border-radius: 13px;
+  --background: #f6891f;
+  margin-top: 15px;
+  height: 45px;
+  width: 40%;
+  font-weight: normal;
+  font-size: 16px;
+  margin-left: 7%;
+}

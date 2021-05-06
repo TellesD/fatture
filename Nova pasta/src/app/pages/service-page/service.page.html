@@ -1,0 +1,35 @@
+<app-header></app-header>
+
+<ion-content>
+  <ion-grid class="grid-login">
+    <ion-row>
+      <ion-col>
+        <h1 class="nameh">Serviços</h1>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+
+        <h3 class="name">Grupo de serviço</h3>
+        <ion-item class="item-login" lines="none">
+          <ion-select (ionChange)="getService($event.target.value)" slot="end" style="max-width: none;">
+            <ion-select-option *ngFor="let item of grupos" value={{item.id}}> {{item.name}}</ion-select-option>
+          </ion-select>
+        </ion-item>
+
+
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+      
+          <p *ngFor="let item of services"  class="name">{{item.name}}</p>
+       <hr class="line-separator" />
+      </ion-col>
+    </ion-row>
+    
+
+  </ion-grid>
+
+
+</ion-content>
